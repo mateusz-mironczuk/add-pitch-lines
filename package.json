@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Draws lines for Japanese pitch patterns.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns/issues"
   },
-  "homepage": "https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns#readme"
+  "homepage": "https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns#readme",
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "lint-staged": "^12.3.1"
+  }
 }
