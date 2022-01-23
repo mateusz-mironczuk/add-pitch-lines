@@ -1,0 +1,25 @@
+{
+  "name": "draw-lines-for-japanese-pitch-patterns",
+  "version": "1.0.0",
+  "description": "Draws lines for Japanese pitch patterns.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns.git"
+  },
+  "keywords": [
+    "japanese",
+    "pitch",
+    "anki",
+    "flashcards"
+  ],
+  "author": "Mateusz Mirończuk <dev.mironczuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns/issues"
+  },
+  "homepage": "https://github.com/mateusz-mironczuk/draw-lines-for-japanese-pitch-patterns#readme"
+}
