@@ -11,9 +11,11 @@ const parserRegex = new RegExp(
 )
 
 export default function generatePitchPatternLines(transliteration) {
-  return isValidInput(transliteration)
-    ? generateLines(transliteration)
-    : ''
+  if (isValidInput(transliteration)) {
+    return generateLines(transliteration)
+  } else {
+    throw new Error('Invalid input.')
+  }
 }
 
 function isValidInput(input) {
