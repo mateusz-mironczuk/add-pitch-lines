@@ -7,7 +7,7 @@ const directory = dirname(currentFile)
 export default {
   entry: './src/index.js',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '_pitchlines.[contenthash].js',
     path: path.resolve(directory, 'dist')
   },
   module: {
