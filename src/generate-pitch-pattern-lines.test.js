@@ -1,25 +1,21 @@
 import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
 
-const invalidInputError = new Error('Invalid input.')
-
-test('throws error when no transliteration', () => {
-  expect(() => generatePitchPatternLines(''))
-    .toThrowError(invalidInputError)
-})
-
-test('throws error when no kana', () => {
-  expect(() => generatePitchPatternLines('hiragana'))
-    .toThrowError(invalidInputError)
-})
-
-test('お¬おい', () => {
-  compare('お¬おい', '<span class="high-pitch">お</span><span>おい</span>')
+test('empty string when no transliteration', () => {
+  compare('', '')
 })
 
 function compare(input, expected) {
   const actual = generatePitchPatternLines(input)
   expect(actual).toBe(expected)
 }
+
+test('unchanged input when no kana', () => {
+  compare('hiragana', 'hiragana')
+})
+
+test('お¬おい', () => {
+  compare('お¬おい', '<span class="high-pitch">お</span><span>おい</span>')
+})
 
 test('しごと', () => {
   compare('しごと', '<span>し</span><span class="high-pitch">ごと</span>')
