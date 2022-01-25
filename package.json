@@ -4,6 +4,7 @@
   "description": "Draws lines for Japanese pitch patterns.",
   "main": "index.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "webpack",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
