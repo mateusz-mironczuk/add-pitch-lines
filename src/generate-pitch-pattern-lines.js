@@ -10,6 +10,14 @@ const parserRegex = new RegExp(
   , 'u'
 )
 
+/**
+ * Decorates a transliteration with pitch pattern lines.
+ * Supports transliterations written entirely in kana with optional pitch
+ * drop marker: ¬.
+ * @param {string} transliteration The transliteration to decorate.
+ * @throws {Error} If the transliteration is not valid or empty.
+ * @returns {string} Decorated transliteration.
+ */
 export default function generatePitchPatternLines(transliteration) {
   if (isValidInput(transliteration)) {
     return generateLines(transliteration)
