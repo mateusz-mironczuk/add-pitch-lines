@@ -1,4 +1,5 @@
 import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
+import './styles.css'
 
 const transliterationContainer = document.getElementById('transliteration')
 
