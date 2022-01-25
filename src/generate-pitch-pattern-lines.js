@@ -6,8 +6,8 @@ const parserRegex = new RegExp(
   + '(?<middle>[^¬]+)??¬?'
   + '(?<rest>[^¬]+)?'
   + '(?<pitchDropAfterLastMora>¬)?'
-  + '$'
-  , 'u'
+  + '$',
+  'u'
 )
 
 /**
