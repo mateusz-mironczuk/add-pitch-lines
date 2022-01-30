@@ -24,59 +24,60 @@ export default function generatePitchPatternLines(transliteration) {
 }
 
 function isValidInput(input) {
-  const hasValidCharacters = validCharactersRegex.test(input)
   return typeof input === 'string'
     && input.length > 0
-    && hasValidCharacters
+    && validCharactersRegex.test(input)
 }
 
 function generateLines(transliteration) {
   const { groups } = transliteration.match(parserRegex)
   return hasThreeParts(groups)
-    ? getHTMLForThreeParts(groups)
+    ? generateHTMLForThreeParts(groups)
     : hasTwoParts(groups)
-      ? getHTMLForTwoParts(groups)
-      : getHTMLForOnePart(groups)
+      ? generateHTMLForTwoParts(groups)
+      : generateHTMLForOnePart(groups)
 }
 
 function hasThreeParts(groups) {
   return groups.middle && groups.rest
 }
 
-function getHTMLForThreeParts(groups) {
+function generateHTMLForThreeParts(groups) {
   const { firstMora, middle, rest } = groups
-  return lowPitch(firstMora) + highPitch(middle) + lowPitch(rest)
+  return generateLowPitchLine(firstMora)
+    + generateHighPitchLine(middle)
+    + generateLowPitchLine(rest)
 }
 
 function hasTwoParts(groups) {
   return !groups.middle && groups.rest
 }
 
-function getHTMLForTwoParts(groups) {
+function generateHTMLForTwoParts(groups) {
   const { firstMora, rest } = groups
   const { pitchDropAfterFirstMora, pitchDropAfterLastMora } = groups
   return pitchDropAfterLastMora
-    ? lowPitch(firstMora) + endsWithPitchDrop(rest)
+    ? generateLowPitchLine(firstMora) + generateLastPitchDropLine(rest)
     : pitchDropAfterFirstMora
-      ? highPitch(firstMora) + lowPitch(rest)
-      : lowPitch(firstMora) + highPitch(rest)
+      ? generateHighPitchLine(firstMora) + generateLowPitchLine(rest)
+      : generateLowPitchLine(firstMora) + generateHighPitchLine(rest)
 }
 
-function getHTMLForOnePart(groups) {
+function generateHTMLForOnePart(groups) {
   const { firstMora, pitchDropAfterFirstMora } = groups
   return pitchDropAfterFirstMora
-    ? highPitch(firstMora)
-    : lowPitch(firstMora)
+    ? generateHighPitchLine(firstMora)
+    : generateLowPitchLine(firstMora)
 }
 
-function lowPitch(characters) {
+function generateLowPitchLine(characters) {
   return `<span>${characters}</span>`
 }
 
-function highPitch(characters) {
+function generateHighPitchLine(characters) {
   return `<span class="high-pitch">${characters}</span>`
 }
 
-function endsWithPitchDrop(characters) {
+function generateLastPitchDropLine(characters) {
   return `<span class="high-pitch ends-with-pitch-drop">${characters}</span>`
 }
