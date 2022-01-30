@@ -1,4 +1,4 @@
-const validCharactersRegex = /[-¬\p{Script=Hiragana}\p{Script=Katakana}]/u
+const validCharactersRegex = /^[ー¬\p{Script=Hiragana}\p{Script=Katakana}]+$/u
 const parserRegex = new RegExp(
   '^'
   + '(?<firstMora>.[ぁぃぅぇぉゃゅょァィゥェォャュョ]?)'

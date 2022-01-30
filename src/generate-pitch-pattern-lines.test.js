@@ -13,6 +13,10 @@ test('unchanged input when no kana', () => {
   compare('hiragana', 'hiragana')
 })
 
+test('unchanged input when kana mixed with unsupported characters', () => {
+  compare('hiらがa.na', 'hiらがa.na')
+})
+
 test('お¬おい', () => {
   compare('お¬おい', '<span class="high-pitch">お</span><span>おい</span>')
 })
