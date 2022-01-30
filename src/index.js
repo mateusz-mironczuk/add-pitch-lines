@@ -1,10 +1,11 @@
 import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
 import './styles.css'
 
-const transliterationContainer = document.getElementById('transliteration')
+const targetID = document.currentScript.dataset.target || 'transliteration'
+const target = document.getElementById(targetID)
 
-if (transliterationContainer) {
-  const transliteration = transliterationContainer.innerText
+if (target) {
+  const transliteration = target.innerText
   const withLines = generatePitchPatternLines(transliteration)
-  transliterationContainer.innerHTML = withLines
+  target.innerHTML = withLines
 }
