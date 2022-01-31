@@ -1,4 +1,4 @@
-const validCharactersRegex = /^[ー¬\p{Script=Hiragana}\p{Script=Katakana}]+$/u
+const validInputRegex = /^[{\p{Script=Hiragana}\p{Script=Katakana}ー¬]+$/u
 const parserRegex = new RegExp(
   '^'
   + '(?<firstMora>.[ぁぃぅぇぉゃゅょァィゥェォャュョ]?)'
@@ -21,15 +21,9 @@ const parserRegex = new RegExp(
  * @returns {string} Decorated transliteration.
  */
 export default function generatePitchPatternLines(transliteration) {
-  return isValidInput(transliteration)
+  return validInputRegex.test(transliteration)
     ? generateLines(transliteration)
     : transliteration
-}
-
-function isValidInput(input) {
-  return typeof input === 'string'
-    && input.length > 0
-    && validCharactersRegex.test(input)
 }
 
 function generateLines(transliteration) {
