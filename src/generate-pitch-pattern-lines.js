@@ -14,6 +14,9 @@ const parserRegex = new RegExp(
  * Decorates a transliteration with pitch pattern lines.
  * Supports transliterations written entirely in kana with optional pitch
  * drop marker: ¬.
+ *
+ * If the given transliteration contains unsupported characters, returns the
+ * transliteration unchanged.
  * @param {string} transliteration The transliteration to decorate.
  * @returns {string} Decorated transliteration.
  */
