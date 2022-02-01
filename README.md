@@ -9,7 +9,9 @@ drop occurs.
 
 For example:
 
-お¬おい is turned into <span style="border-top: 1px solid red;">お</span><span style="border-bottom: 1px solid red; border-left: 1px solid red;">おい</span>.
+お¬おい is turned into:
+
+![お¬おい](/doc/お¬おい_decorated.png)
 
 ## Installation
 1. Build the script with `npm run build` command.
