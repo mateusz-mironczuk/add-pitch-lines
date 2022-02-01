@@ -1,6 +1,6 @@
 {
   "name": "draw-lines-for-japanese-pitch-patterns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Draws lines for Japanese pitch patterns.",
   "main": "index.js",
   "type": "module",
