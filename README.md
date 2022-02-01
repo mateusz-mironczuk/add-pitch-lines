@@ -18,7 +18,7 @@ For example:
 3. In your card's back template:
     1. Wrap the place which contains the transliteration with:
         ```HTML
-        <span id="transliteration" class="transliteration">{{Transliteration}}</span>
+        <span id="transliteration" class="pitch-lines">{{Transliteration}}</span>
         ```
         Where `{{Transliteration}}` is a placeholder for a word transliteration.
     2. Add the following code:

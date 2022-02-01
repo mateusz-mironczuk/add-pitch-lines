@@ -51,40 +51,52 @@ test('unchanged when transliteration at the end', () => {
 })
 
 test('お¬おい', () => {
-  compare('お¬おい', '<span class="high-pitch">お</span><span>おい</span>')
+  compare(
+    'お¬おい',
+    '<span class="high-pitch">お</span><span class="low-pitch">おい</span>'
+  )
 })
 
 test('しごと', () => {
-  compare('しごと', '<span>し</span><span class="high-pitch">ごと</span>')
+  compare(
+    'しごと',
+    '<span class="low-pitch">し</span><span class="high-pitch">ごと</span>'
+  )
 })
 
 test('みんな¬', () => {
   compare(
     'みんな¬',
-    '<span>み</span><span class="high-pitch ends-with-pitch-drop">んな</span>'
+    '<span class="low-pitch">み</span><span class="high-pitch ends-with-pitch-drop">んな</span>'
   )
 })
 
 test('じて¬んしゃ', () => {
   compare(
     'じて¬んしゃ',
-    '<span>じ</span><span class="high-pitch">て</span><span>んしゃ</span>'
+    '<span class="low-pitch">じ</span><span class="high-pitch">て</span><span class="low-pitch">んしゃ</span>'
   )
 })
 
 test('おんな¬のこ', () => {
   compare(
     'おんな¬のこ',
-    '<span>お</span><span class="high-pitch">んな</span><span>のこ</span>'
+    '<span class="low-pitch">お</span><span class="high-pitch">んな</span><span class="low-pitch">のこ</span>'
   )
 })
 
 test('りょこう', () => {
-  compare('りょこう', '<span>りょ</span><span class="high-pitch">こう</span>')
+  compare(
+    'りょこう',
+    '<span class="low-pitch">りょ</span><span class="high-pitch">こう</span>'
+  )
 })
 
 test('きょ¬ねん', () => {
-  compare('きょ¬ねん', '<span class="high-pitch">きょ</span><span>ねん</span>')
+  compare(
+    'きょ¬ねん',
+    '<span class="high-pitch">きょ</span><span class="low-pitch">ねん</span>'
+  )
 })
 
 test('き¬', () => {
@@ -96,25 +108,31 @@ test('きょ¬', () => {
 })
 
 test('き', () => {
-  compare('き', '<span>き</span>')
+  compare('き', '<span class="low-pitch">き</span>')
 })
 
 test('きょ', () => {
-  compare('きょ', '<span>きょ</span>')
+  compare('きょ', '<span class="low-pitch">きょ</span>')
 })
 
 test('がっこう', () => {
-  compare('がっこう', '<span>が</span><span class="high-pitch">っこう</span>')
+  compare(
+    'がっこう',
+    '<span class="low-pitch">が</span><span class="high-pitch">っこう</span>'
+  )
 })
 
 test('ゲ¬ーム', () => {
-  compare('ゲ¬ーム', '<span class="high-pitch">ゲ</span><span>ーム</span>')
+  compare(
+    'ゲ¬ーム',
+    '<span class="high-pitch">ゲ</span><span class="low-pitch">ーム</span>'
+  )
 })
 
 test('レシ¬ート', () => {
   compare(
     'レシ¬ート',
-    '<span>レ</span><span class="high-pitch">シ</span><span>ート</span>'
+    '<span class="low-pitch">レ</span><span class="high-pitch">シ</span><span class="low-pitch">ート</span>'
   )
 })
 

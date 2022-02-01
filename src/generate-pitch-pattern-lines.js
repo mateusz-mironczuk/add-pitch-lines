@@ -73,7 +73,7 @@ function generateHTMLForOnePart(groups) {
 }
 
 function generateLowPitchLine(characters) {
-  return `<span>${characters}</span>`
+  return `<span class="low-pitch">${characters}</span>`
 }
 
 function generateHighPitchLine(characters) {

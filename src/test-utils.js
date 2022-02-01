@@ -13,7 +13,7 @@ export const word = 'じて¬んしゃ'
  * @see word
  */
 export const wordDecorated =
-  '<span>じ</span><span class="high-pitch">て</span><span>んしゃ</span>'
+  '<span class="low-pitch">じ</span><span class="high-pitch">て</span><span class="low-pitch">んしゃ</span>'
 
 /**
  * A sample unsupported word with romaji.

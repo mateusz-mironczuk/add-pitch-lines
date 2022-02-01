@@ -1,28 +1,28 @@
-.transliteration {
+.pitch-lines {
   --border: 1px solid red;
 }
 
-.transliteration span {
+.pitch-lines .low-pitch {
   border-bottom: var(--border);
 }
 
-.transliteration span:not(:first-child) {
+.pitch-lines .low-pitch:not(:first-child) {
   border-left: var(--border);
 }
 
-.transliteration span:first-child:last-child {
+.pitch-lines .low-pitch:first-child:last-child {
   border-right: var(--border);
 }
 
-.transliteration .high-pitch {
+.pitch-lines .high-pitch {
   border-bottom: none;
   border-top: var(--border);
 }
 
-.transliteration .high-pitch:not(:first-child) {
+.pitch-lines .high-pitch:not(:first-child) {
   border-left: var(--border);
 }
 
-.transliteration .ends-with-pitch-drop {
+.pitch-lines .ends-with-pitch-drop {
   border-right: var(--border);
 }
