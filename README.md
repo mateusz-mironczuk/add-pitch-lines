@@ -42,9 +42,9 @@ Where `otherID` is your desired ID.
 For example:
  ```JavaScript
 <script>
-  var script = document.createElement('script')
-  script.src = '_pitchlines.7ed947a7616e485f6477.js'
-  script.setAttribute('data-id', 'otherID')
-  document.getElementsByTagName('head')[0].appendChild(script)
+var script = document.createElement('script')
+script.src = '_pitchlines.7ed947a7616e485f6477.js'
+script.setAttribute('data-id', 'otherID')
+document.getElementsByTagName('head')[0].appendChild(script)
 </script>
 ```
