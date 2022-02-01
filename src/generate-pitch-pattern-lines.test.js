@@ -1,20 +1,53 @@
-import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
+import {
+  compare,
+  someTags,
+  soundHTMLTemplate,
+  word,
+  wordDecorated,
+  wordInRomaji,
+  wordMixed
+} from './test-utils.js'
 
 test('empty string when no transliteration', () => {
   compare('', '')
 })
 
-function compare(input, expected) {
-  const actual = generatePitchPatternLines(input)
-  expect(actual).toBe(expected)
-}
-
 test('unchanged input when no kana', () => {
-  compare('hiragana', 'hiragana')
+  compare(wordInRomaji, wordInRomaji)
 })
 
 test('unchanged input when kana mixed with unsupported characters', () => {
-  compare('hiらがa.na', 'hiらがa.na')
+  compare(wordMixed, wordMixed)
+})
+
+test('unchanged when no transliteration and sound', () => {
+  const before = soundHTMLTemplate
+  compare(before, before)
+})
+
+test('unchanged when no kana and sound', () => {
+  const before = wordInRomaji + soundHTMLTemplate
+  compare(before, before)
+})
+
+test('unchanged when kana mixed with unsupported characters and sound', () => {
+  const before = wordMixed + soundHTMLTemplate
+  compare(before, before)
+})
+
+test('unchanged when no transliteration and other tags', () => {
+  const before = someTags
+  compare(before, before)
+})
+
+test('unchanged when transliteration in the middle', () => {
+  const before = soundHTMLTemplate + word + soundHTMLTemplate
+  compare(before, before)
+})
+
+test('unchanged when transliteration at the end', () => {
+  const before = soundHTMLTemplate + word
+  compare(before, before)
 })
 
 test('お¬おい', () => {
@@ -85,3 +118,16 @@ test('レシ¬ート', () => {
   )
 })
 
+test('decorated when sound', () => {
+  compare(
+    word + soundHTMLTemplate,
+    wordDecorated + soundHTMLTemplate
+  )
+})
+
+test('decorated when some tags after', () => {
+  compare(
+    word + someTags,
+    wordDecorated + someTags
+  )
+})

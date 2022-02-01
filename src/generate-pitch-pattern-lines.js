@@ -1,4 +1,11 @@
-const validInputRegex = /^[{\p{Script=Hiragana}\p{Script=Katakana}ー¬]+$/u
+const kana = String.raw`[{\p{Script=Hiragana}\p{Script=Katakana}ー]`
+const inputRegex = new RegExp(
+  '^'
+  + `(?<transliteration>${kana}+¬?${kana}*)`
+  + '(?<rest>.*)'
+  + '$',
+  'us'
+)
 const parserRegex = new RegExp(
   '^'
   + '(?<firstMora>.[ぁぃぅぇぉゃゅょァィゥェォャュョ]?)'
@@ -11,19 +18,17 @@ const parserRegex = new RegExp(
 )
 
 /**
- * Decorates a transliteration with pitch pattern lines.
+ * Decorates a transliteration in a given input with pitch pattern lines.
  * Supports transliterations written entirely in kana with optional pitch
  * drop marker: ¬.
- *
- * If the given transliteration contains unsupported characters, returns the
- * transliteration unchanged.
- * @param {string} transliteration The transliteration to decorate.
- * @returns {string} Decorated transliteration.
+ * @param {string} input The input with the transliteration to decorate.
+ * @returns {string} The input with the decorated transliteration.
  */
-export default function generatePitchPatternLines(transliteration) {
-  return validInputRegex.test(transliteration)
-    ? generateLines(transliteration)
-    : transliteration
+export default function generatePitchPatternLines(input) {
+  const match = input.match(inputRegex)
+  return match
+    ? generateLines(match.groups.transliteration) + match.groups.rest
+    : input
 }
 
 function generateLines(transliteration) {
