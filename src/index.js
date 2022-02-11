@@ -1,8 +1,7 @@
 import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
 import './styles.css'
 
-const targetID = document.currentScript.dataset.id || 'transliteration'
-const target = document.getElementById(targetID)
+const target = document.getElementById('transliteration')
 
 if (target) {
   const transliteration = target.innerHTML

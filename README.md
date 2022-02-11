@@ -32,19 +32,3 @@ For example:
         </script>
         ```
         Where `script.src` contains the generated script`s file name.
-
-## Configuration
-You can specify a different transliteration wrapper element ID by adding:
-`script.setAttribute('data-id', 'otherID')`.
-
-Where `otherID` is your desired ID.
-
-For example:
- ```JavaScript
-<script>
-var script = document.createElement('script')
-script.src = '_pitchlines.7ed947a7616e485f6477.js'
-script.setAttribute('data-id', 'otherID')
-document.getElementsByTagName('head')[0].appendChild(script)
-</script>
-```
