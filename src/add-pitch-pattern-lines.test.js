@@ -1,5 +1,4 @@
 import addPitchPatternLines from './add-pitch-pattern-lines.js'
-import * as testUtils from './test-utils.js'
 
 test('empty string when no transliteration', () => {
   const actual = addPitchPatternLines('')
@@ -8,9 +7,10 @@ test('empty string when no transliteration', () => {
 })
 
 test('unchanged input when unsupported characters', () => {
-  const actual = addPitchPatternLines(testUtils.wordMixed)
+  const transliteration = 'hiらがa.na'
+  const actual = addPitchPatternLines(transliteration)
   expect(actual)
-    .toBe(testUtils.wordMixed)
+    .toBe(transliteration)
 })
 
 test.each([
