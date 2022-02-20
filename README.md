@@ -1,7 +1,7 @@
-# draw-lines-for-japanese-pitch-patterns
-Draws lines for Japanese pitch patterns.
+# add-pitch-lines
+Adds lines for Japanese pitch patterns.
 
-The script draws pitch pattern lines on a given HTML element which contains an
+The script adds pitch pattern lines on a given HTML element which contains a
 Japanese transliteration written in kana.
 
 Supports the notion with the `¬` character witch marks the place when a pitch
