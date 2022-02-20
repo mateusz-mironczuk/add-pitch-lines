@@ -1,14 +1,14 @@
-import addPitchPatternLines from './add-pitch-pattern-lines.js'
+import addPitchLines from './add-pitch-lines.js'
 
 test('empty string when no transliteration', () => {
-  const actual = addPitchPatternLines('')
+  const actual = addPitchLines('')
   expect(actual)
     .toBe('')
 })
 
 test('unchanged input when unsupported characters', () => {
   const transliteration = 'hiらがa.na'
-  const actual = addPitchPatternLines(transliteration)
+  const actual = addPitchLines(transliteration)
   expect(actual)
     .toBe(transliteration)
 })
@@ -29,7 +29,7 @@ test.each([
   ['ゲ¬ーム', '<span class="high-pitch">ゲ</span><span class="low-pitch">ーム</span>'],
   ['レシ¬ート', '<span class="low-pitch">レ</span><span class="high-pitch">シ</span><span class="low-pitch">ート</span>']
 ])('added pitch pattern lines to %s', (transliteration, expected) => {
-  const actual = addPitchPatternLines(transliteration)
+  const actual = addPitchLines(transliteration)
   expect(actual)
     .toBe(expected)
 })

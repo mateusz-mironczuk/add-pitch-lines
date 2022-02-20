@@ -18,7 +18,7 @@ const parserRegex = new RegExp(
  * @param {string} transliteration The transliteration to decorate.
  * @returns {string} The decorated transliteration.
  */
-export default function addPitchPatternLines(transliteration) {
+export default function addPitchLines(transliteration) {
   return transliterationRegex.test(transliteration)
     ? addLines(transliteration)
     : transliteration

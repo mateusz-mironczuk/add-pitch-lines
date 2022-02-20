@@ -1,4 +1,4 @@
-import addPitchPatternLinesToElement from './add-pitch-pattern-lines-to-element.js'
+import addPitchLinesToElement from './add-pitch-lines-to-element.js'
 import domCompare from 'dom-compare'
 import { parseHTML } from './utils.js'
 
@@ -16,7 +16,7 @@ const soundHTML =
 test('unchanged when no direct child text nodes', () => {
   const html = `${someHTML}${someHTML}`
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expected = parseHTML(html).body
   const comparisonResult = domCompare
     .compare(body, expected)
@@ -28,7 +28,7 @@ test('unchanged when no direct child text nodes', () => {
 test('updated when the only child note is text node', () => {
   const html = transliteration
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expectedHTML = transliterationWithLines
   const expected = parseHTML(expectedHTML).body
   const comparisonResult = domCompare
@@ -41,7 +41,7 @@ test('updated when the only child note is text node', () => {
 test('updated when element before', () => {
   const html = `${someHTML}${transliteration}`
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expectedHTML = `${someHTML}${transliterationWithLines}`
   const expected = parseHTML(expectedHTML).body
   const comparisonResult = domCompare
@@ -54,7 +54,7 @@ test('updated when element before', () => {
 test('updated when element after', () => {
   const html = `${transliteration}${soundHTML}`
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expectedHTML = `${transliterationWithLines}${soundHTML}`
   const expected = parseHTML(expectedHTML).body
   const comparisonResult = domCompare
@@ -67,7 +67,7 @@ test('updated when element after', () => {
 test('updated when text node between elements', () => {
   const html = `${someHTML}${transliteration}${soundHTML}`
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expectedHTML = `${someHTML}${transliterationWithLines}${soundHTML}`
   const expected = parseHTML(expectedHTML).body
   const comparisonResult = domCompare
@@ -80,7 +80,7 @@ test('updated when text node between elements', () => {
 test('updated all when multiple text nodes', () => {
   const html = `${someHTML}${transliteration}${soundHTML}${transliteration}${someHTML}`
   const body = parseHTML(html).body
-  addPitchPatternLinesToElement(body)
+  addPitchLinesToElement(body)
   const expectedHTML = `${someHTML}${transliterationWithLines}${soundHTML}${transliterationWithLines}${someHTML}`
   const expected = parseHTML(expectedHTML).body
   const comparisonResult = domCompare

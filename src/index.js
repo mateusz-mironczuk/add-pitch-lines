@@ -1,8 +1,8 @@
-import addPitchPatternLinesToElement from './add-pitch-pattern-lines-to-element.js'
+import addPitchLinesToElement from './add-pitch-lines-to-element.js'
 import './styles.css'
 
 const target = document.getElementById('transliteration')
 
 if (target) {
-  addPitchPatternLinesToElement(target)
+  addPitchLinesToElement(target)
 }
