@@ -1,26 +1,3 @@
-import generatePitchPatternLines from './generate-pitch-pattern-lines.js'
-
-/**
- * A sample word to use in tests.
- * @type {string}
- * @see wordDecorated
- */
-export const word = 'じて¬んしゃ'
-
-/**
- * The same word with generated pitch pattern lines.
- * @type {string}
- * @see word
- */
-export const wordDecorated =
-  '<span class="low-pitch">じ</span><span class="high-pitch">て</span><span class="low-pitch">んしゃ</span>'
-
-/**
- * A sample unsupported word with romaji.
- * @type {string}
- */
-export const wordInRomaji = 'hiragana'
-
 /**
  * A sample unsupported word with mixed characters.
  * @type {string}
@@ -44,13 +21,3 @@ export const soundHTMLTemplate =
         <path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
     </svg>
   </a>`
-
-/**
- * Compares the result with pitch pattern lines generated for a given input.
- * @param {string} input The input to the pitch pattern generator.
- * @param {string} expected The expected result.
- */
-export function compare(input, expected) {
-  const actual = generatePitchPatternLines(input)
-  expect(actual).toBe(expected)
-}
