@@ -26,7 +26,7 @@ For example:
     2. Add the following code:
         ```JavaScript
         <script>
-        var script = document.createElement('script')
+        const script = document.createElement('script')
         script.src = '_pitchlines.7ed947a7616e485f6477.js'
         document.getElementsByTagName('head')[0].appendChild(script)
         </script>
