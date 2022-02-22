@@ -1,4 +1,4 @@
-# add-pitch-lines
+# pitch-lines
 Adds lines for Japanese pitch patterns.
 
 The script adds pitch pattern lines on a given HTML element which contains a

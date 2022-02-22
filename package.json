@@ -1,7 +1,7 @@
 {
-  "name": "add-pitch-lines",
+  "name": "pitch-lines",
   "version": "2.0.2",
-  "description": "Draws lines for Japanese pitch patterns.",
+  "description": "Adds lines for Japanese pitch patterns.",
   "main": "index.js",
   "type": "module",
   "private": true,
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mateusz-mironczuk/add-pitch-lines.git"
+    "url": "git+https://github.com/mateusz-mironczuk/pitch-lines.git"
   },
   "keywords": [
     "japanese",
@@ -23,9 +23,9 @@
   "author": "Mateusz Mirończuk <dev.mironczuk@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mateusz-mironczuk/add-pitch-lines/issues"
+    "url": "https://github.com/mateusz-mironczuk/pitch-lines/issues"
   },
-  "homepage": "https://github.com/mateusz-mironczuk/add-pitch-lines#readme",
+  "homepage": "https://github.com/mateusz-mironczuk/pitch-lines#readme",
   "devDependencies": {
     "css-loader": "^6.5.1",
     "dom-compare": "^0.1.1",
